@@ -1,3 +1,4 @@
+import headshot from '../img/headshot.jpg'
 import './App.css'
 
 const projectSlots = Array.from({ length: 3 })
@@ -6,29 +7,34 @@ function App() {
   return (
     <div className="page">
       <header className="hero" aria-labelledby="intro-title">
-        <p className="eyebrow">Aspiring software engineer</p>
-        <h1 id="intro-title">
-          Learning to build reliable systems, one project at a time.
-        </h1>
-        {/* TODO: Replace with your personal mission statement once ready. */}
-        <p className="lede">
-          Early-career software engineer focused on learning backend systems, automation, and clean code practices.
-          Building this space to document the journey and find teams willing to mentor a motivated intern.
-        </p>
-        <div className="hero-actions">
-          <a className="ghost-link" href="#work">
-            View work
-          </a>
-          <a className="ghost-link" href="#contact">
-            Connect
-          </a>
+        <div className="hero-content">
+          <p className="eyebrow">Aspiring software engineer</p>
+          <h1 id="intro-title">
+            Learning to build reliable systems, one project at a time.
+          </h1>
+          <p className="lede">
+            Early-career software engineer focused on learning backend systems, automation, and clean code practices.
+            Building this space to document the journey and find teams willing to mentor a motivated intern.
+          </p>
+          <div className="hero-actions">
+            <a className="ghost-link" href="#work">
+              View work
+            </a>
+            <a className="ghost-link" href="https://www.linkedin.com/in/marcusruth/" target="_blank" rel="noreferrer">
+              Connect
+            </a>
+          </div>
         </div>
+
+        <figure className="hero-photo">
+          <img src={headshot} alt="Marcus — Computer Science Student at the University of Central Florida" loading="lazy" />
+        </figure>
       </header>
 
       <section className="projects" id="work" aria-label="Selected projects">
         <div className="section-heading">
           <p className="eyebrow">Selected work</p>
-          <h2>Quietly opinionated builds</h2>
+          <h2>Upcoming Projects</h2>
         </div>
         <div className="project-grid">
           {projectSlots.map((_, index) => (
@@ -55,8 +61,8 @@ function App() {
           <h2 id="contact-title">Learning fast, ready to contribute with guidance.</h2>
         </div>
         <div className="contact-details">
-          {/* TODO: Update with your preferred contact email. */}
-          <a href="mailto:marcusruth2003@gmail.com">marcusruth2003@gmail.com</a>
+          
+          <a href="mailto:marcusruth2003@gmail.com"><em><u>Email Me!</u></em></a>
           <p>
             I’m still building foundational projects and would love to grow inside a team willing to mentor an
             intern/junior engineer.
