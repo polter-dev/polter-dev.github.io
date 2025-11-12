@@ -6,6 +6,13 @@ const projectSlots = Array.from({ length: 3 })
 function App() {
   return (
     <div className="page">
+      <nav className="toc" aria-label="Table of contents">
+        <a href="/github.html">Github</a>
+        <a href="/about.html">About Me</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
       <header className="hero" aria-labelledby="intro-title">
         <div className="hero-content">
           <p className="eyebrow">Aspiring software engineer</p>
