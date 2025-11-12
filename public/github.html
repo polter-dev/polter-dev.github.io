@@ -2,9 +2,282 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Github · Work in progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marcus · GitHub Workbench</title>
+    <link rel="stylesheet" href="/toc.css" />
+    <style>
+      :root {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #0f1726;
+        background: #05070c;
+        --card: rgba(248, 246, 239, 0.95);
+        --ink: #0f1726;
+        --muted: #5d6573;
+        --accent: #ff7a18;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 80% 5%, rgba(255, 166, 104, 0.3), transparent 45%),
+          radial-gradient(circle at 15% 20%, rgba(82, 129, 255, 0.25), transparent 55%),
+          linear-gradient(150deg, #05070c, #0b1020 55%, #141d2f);
+        color: #0f1726;
+        display: flex;
+        justify-content: center;
+        padding: 4rem 1.25rem;
+      }
+      .page {
+        width: min(1100px, 100%);
+      }
+      .shell {
+        background: var(--card);
+        border-radius: 32px;
+        padding: 3.2rem;
+        box-shadow: 0 45px 120px rgba(4, 7, 15, 0.6);
+        border: 1px solid rgba(15, 23, 38, 0.08);
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(15, 23, 38, 0.08);
+        padding-bottom: 1.8rem;
+        margin-bottom: 2.5rem;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.35em;
+        font-size: 0.72rem;
+        color: rgba(17, 26, 37, 0.6);
+        margin: 0 0 0.6rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 5vw, 3rem);
+      }
+      header p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 520px;
+        line-height: 1.55;
+      }
+      .cta-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-width: 220px;
+      }
+      .ghost-link {
+        border: 1px solid rgba(17, 26, 37, 0.25);
+        padding: 0.65rem 1.1rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #111a25;
+        text-align: center;
+        font-weight: 600;
+        transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+      }
+      .ghost-link:hover,
+      .ghost-link:focus-visible {
+        background: #111a25;
+        color: #fdfbf7;
+        transform: translateY(-2px);
+      }
+      section {
+        margin-bottom: 2.5rem;
+      }
+      section:last-of-type {
+        margin-bottom: 0;
+      }
+      .embed-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .stat-card {
+        border-radius: 24px;
+        border: 1px solid rgba(15, 23, 38, 0.15);
+        background: #fff;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        padding: 1.25rem;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .stat-card img {
+        width: 100%;
+        border-radius: 16px;
+        border: 1px solid rgba(15, 23, 38, 0.08);
+        background: #fff;
+      }
+      .stat-card .eyebrow {
+        margin-bottom: 0;
+      }
+      .embed-note {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-top: 0.8rem;
+      }
+      .embed-note a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .embed-note a:hover {
+        text-decoration: underline;
+      }
+      .repo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+      .repo-card {
+        border: 1px dashed rgba(15, 23, 38, 0.25);
+        border-radius: 18px;
+        padding: 1.5rem;
+        background: #ffffff;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition: transform 220ms ease, box-shadow 220ms ease;
+      }
+      .repo-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 45px rgba(19, 26, 39, 0.1);
+      }
+      .repo-card h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      .repo-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .tag {
+        align-self: flex-start;
+        padding: 0.25rem 0.85rem;
+        border-radius: 999px;
+        border: 1px solid rgba(15, 23, 38, 0.25);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: rgba(15, 23, 38, 0.7);
+      }
+      footer {
+        margin-top: 2.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        text-align: center;
+      }
+      @media (max-width: 720px) {
+        .shell {
+          padding: 2.25rem 1.75rem;
+        }
+        header {
+          flex-direction: column;
+        }
+        .cta-links {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    Work in progress
+    <div class="page">
+      <nav class="toc" aria-label="Site navigation">
+        <a href="/">Home</a>
+        <a href="/github.html" aria-current="page">Github</a>
+        <a href="/about.html">About Me</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <div class="shell">
+        <header>
+          <div>
+            <p class="eyebrow">Marcus Ruth · Computer Science Student</p>
+            <h1>GitHub highlights</h1>
+            <p>
+              Curated repositories, learning experiments, and contribution history will lives here.
+            </p>
+          </div>
+          <div class="cta-links">
+            <a class="ghost-link" href="https://github.com/polter-dev" target="_blank" rel="noreferrer">
+              Open GitHub
+            </a>
+            <a class="ghost-link" href="https://www.linkedin.com/in/marcusruth/" target="_blank" rel="noreferrer">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </header>
+
+        <section class="github-embed">
+          <h2>Live profile preview</h2>
+          <div class="embed-grid">
+            <article class="stat-card">
+              <p class="eyebrow">Stats snapshot</p>
+              <img
+                src="https://github-readme-stats.vercel.app/api?username=polter-dev&show_icons=true&hide_border=true&bg_color=ffffff&title_color=111a25&text_color=5d6573&icon_color=ff7a18"
+                alt="GitHub stats for polter-dev"
+                loading="lazy"
+              />
+            </article>
+            <article class="stat-card">
+              <p class="eyebrow">Contribution streak</p>
+              <img
+                src="https://ghchart.rshah.org/2f3a4d/polter-dev"
+                alt="GitHub contribution chart for polter-dev"
+                loading="lazy"
+              />
+            </article>
+          </div>
+          <p class="embed-note">
+            GitHub prevents embedding the full profile inside other sites. Use the stats above or
+            <a href="https://github.com/polter-dev" target="_blank" rel="noreferrer">open the profile directly</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Featured repositories</h2>
+          <p>Take a look at the code of my favorite projects!</p>
+          <div class="repo-grid">
+            <article class="repo-card">
+              <p class="eyebrow">Slot 01</p>
+              <h3>Repository slot 01</h3>
+              <p>Placeholder for project description and key tech stack.</p>
+              <span class="tag">Backend</span>
+            </article>
+            <article class="repo-card">
+              <p class="eyebrow">Slot 02</p>
+              <h3>Repository slot 02</h3>
+              <p>Placeholder for project description and key tech stack.</p>
+              <span class="tag">Automation</span>
+            </article>
+            <article class="repo-card">
+              <p class="eyebrow">Slot 03</p>
+              <h3>Repository slot 03</h3>
+              <p>Placeholder for project description and key tech stack.</p>
+              <span class="tag">Learning</span>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Latest activity</h2>
+          <p>Commit history and contribution graph will appear here soon.</p>
+        </section>
+
+        <footer>Updated manually · Connect via LinkedIn or email for full context.</footer>
+      </div>
+    </div>
   </body>
 </html>
