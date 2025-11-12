@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="page">
       <nav className="toc" aria-label="Table of contents">
+        <a href="/" className="primary">Home</a>
         <a href="/github.html">Github</a>
         <a href="/about.html">About Me</a>
         <a href="/resume.html">Resume</a>
