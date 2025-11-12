@@ -1,0 +1,78 @@
+.toc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto 1.8rem;
+  padding: 0.85rem 1.5rem;
+  max-width: 1100px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 26, 37, 0.15);
+  background: rgba(250, 248, 242, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 65px rgba(5, 8, 15, 0.25);
+  position: sticky;
+  top: 1rem;
+  z-index: 20;
+}
+
+.toc a {
+  position: relative;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #111a25;
+  text-decoration: none;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  transition:
+    color 220ms ease,
+    transform 220ms ease;
+  isolation: isolate;
+}
+
+.toc a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(17, 26, 37, 0.08);
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.toc a[aria-current='page']::after {
+  background: #111a25;
+  transform: scaleY(1);
+}
+
+.toc a[aria-current='page'] {
+  color: #fdfbf7;
+}
+
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--accent, #ff7a18);
+  transform: translateY(-1px);
+}
+
+.toc a:hover::after,
+.toc a:focus-visible::after {
+  transform: scaleY(1);
+  background: rgba(17, 26, 37, 0.15);
+}
+
+@media (max-width: 640px) {
+  .toc {
+    padding: 0.65rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .toc a {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+}
