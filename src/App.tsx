@@ -42,6 +42,44 @@ function App() {
         </figure>
       </header>
 
+      <section className="skills" id="skills" aria-label="Technical skills">
+        <div className="section-heading">
+          <p className="eyebrow">Technical skills</p>
+          <h2>Where I’m confident and what I’m learning next</h2>
+        </div>
+        <ul className="skill-list">
+          <li className="skill-item">
+            <div className="skill-title">
+              <span>Systems in C</span>
+              <small>Daily driver</small>
+            </div>
+          <p>
+            Designing data structures from scratch, <strong>managing memory manually</strong>, and tracing logic down to each byte.
+          </p>
+          </li>
+          <li className="skill-item">
+            <div className="skill-title">
+              <span>Growing with Java</span>
+              <small>Next semester</small>
+            </div>
+            <p>
+              Pairing upcoming coursework with personal exercises so I can practice testing, documentation, and
+              readable implementations while the concepts are fresh.
+            </p>
+          </li>
+          <li className="skill-item">
+            <div className="skill-title">
+              <span>Next up: C++ & AWS</span>
+              <small>Self-study</small>
+            </div>
+            <p>
+              Learning C++ for performance-heavy work and preparing for the AWS Cloud Practitioner certification to get
+              comfortable with real deployment environments.
+            </p>
+          </li>
+        </ul>
+      </section>
+
       <section className="projects" id="work" aria-label="Selected projects">
         <div className="section-heading">
           <p className="eyebrow">Selected work</p>
