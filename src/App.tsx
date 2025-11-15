@@ -86,16 +86,31 @@ function App() {
           <h2>Upcoming Projects</h2>
         </div>
         <div className="project-grid">
-          {projectSlots.map((_, index) => (
+          <article className="project-card">
+            <header className="project-meta">
+              <span>2025</span>
+              <a className="project-link" href="https://github.com/polter-dev/miniredis_cpp" target="_blank" rel="noreferrer">
+                Mini Redis in C++
+              </a>
+            </header>
+            <p>
+              Building a Mini Redis clone to grow C++ skills — manual networking, memory management, and the
+              discipline to implement core commands from scratch.
+            </p>
+            <ul className="tag-list">
+              <li>C++</li>
+              <li>Networking</li>
+              <li>Systems</li>
+            </ul>
+          </article>
+
+          {projectSlots.slice(0, 2).map((_, index) => (
             <article key={index} className="project-card project-card--empty">
-              {/* TODO: Replace placeholder metadata with year and live link. */}
               <header className="project-meta">
                 <span>Upcoming</span>
-                <span className="project-link muted">Project {index + 1}</span>
+                <span className="project-link muted">Project {index + 2}</span>
               </header>
-              {/* TODO: Swap this copy with a short problem/solution summary. */}
               <p className="placeholder-copy">Project details coming soon.</p>
-              {/* TODO: List the stack or responsibilities once the project ships. */}
               <ul className="tag-list muted">
                 <li>In progress</li>
               </ul>
