@@ -54,7 +54,7 @@ function App() {
               <small>Daily driver</small>
             </div>
           <p>
-            Designing data structures from scratch, <strong>managing memory manually</strong>, and tracing logic down to each byte.
+            Designing data structures from scratch, managing memory manually, and tracing logic down to each byte.
           </p>
           </li>
           <li className="skill-item">
