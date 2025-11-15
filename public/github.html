@@ -172,6 +172,11 @@
         letter-spacing: 0.2em;
         color: rgba(15, 23, 38, 0.7);
       }
+      .tag-row {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+      }
       footer {
         margin-top: 2.5rem;
         font-size: 0.85rem;
@@ -252,9 +257,18 @@
           <div class="repo-grid">
             <article class="repo-card">
               <p class="eyebrow">Slot 01</p>
-              <h3>Repository slot 01</h3>
-              <p>Placeholder for project description and key tech stack.</p>
-              <span class="tag">Backend</span>
+              <h3>
+                <a href="https://github.com/polter-dev/miniredis_cpp" target="_blank" rel="noreferrer">
+                  Mini Redis in C++
+                </a>
+              </h3>
+              <p>
+                Personal build of a lightweight Redis clone to master manual memory, command parsing, and network I/O in C++.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Networking</span>
+                <span class="tag">Systems</span>
+              </div>
             </article>
             <article class="repo-card">
               <p class="eyebrow">Slot 02</p>
