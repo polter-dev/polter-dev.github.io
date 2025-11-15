@@ -94,8 +94,8 @@ function App() {
               </a>
             </header>
             <p>
-              Building a Mini Redis clone to grow C++ skills — manual networking, memory management, and the
-              discipline to implement core commands from scratch.
+              Building a Mini Redis clone to grow C++ skills — manual networking, memory management, and the discipline
+              to implement core commands from scratch.
             </p>
             <ul className="tag-list">
               <li>C++</li>
