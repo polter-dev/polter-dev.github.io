@@ -27,6 +27,15 @@ function App() {
             Early-career software engineer focused on learning backend systems, automation, and clean code practices.
             Building this space to document the journey and find teams willing to mentor a motivated intern.
           </p>
+          <div className="hero-skills">
+            <span className="hero-skills-label">Technical skills:</span>
+            <div className="hero-skills-tags">
+              <span>C</span>
+              <span>C++</span>
+              <span>Java</span>
+              <span>AWS</span>
+            </div>
+          </div>
           <div className="hero-actions">
             <a className="ghost-link" href="#work">
               View work
@@ -42,43 +51,6 @@ function App() {
         </figure>
       </header>
 
-      <section className="skills" id="skills" aria-label="Technical skills">
-        <div className="section-heading">
-          <p className="eyebrow">Technical skills</p>
-          <h2>Where I’m confident and what I’m learning next</h2>
-        </div>
-        <ul className="skill-list">
-          <li className="skill-item">
-            <div className="skill-title">
-              <span>Systems in C</span>
-              <small>Daily driver</small>
-            </div>
-          <p>
-            Designing data structures from scratch, managing memory manually, and tracing logic down to each byte.
-          </p>
-          </li>
-          <li className="skill-item">
-            <div className="skill-title">
-              <span>Growing with Java</span>
-              <small>Next semester</small>
-            </div>
-            <p>
-              Pairing upcoming coursework with personal exercises so I can practice testing, documentation, and
-              readable implementations while the concepts are fresh.
-            </p>
-          </li>
-          <li className="skill-item">
-            <div className="skill-title">
-              <span>Next up: C++ & AWS</span>
-              <small>Self-study</small>
-            </div>
-            <p>
-              Learning C++ for performance-heavy work and preparing for the AWS Cloud Practitioner certification to get
-              comfortable with real deployment environments.
-            </p>
-          </li>
-        </ul>
-      </section>
 
       <section className="projects" id="work" aria-label="Selected projects">
         <div className="section-heading">
