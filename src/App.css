@@ -1,17 +1,17 @@
 @import url('/toc.css');
 
 .page {
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 5rem 2.5rem 5.5rem;
+  padding: 5rem 3rem 5.75rem;
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 5rem;
   position: relative;
   background: var(--bg-card);
   border-radius: 36px;
   border: 1px solid rgba(15, 20, 25, 0.12);
-  box-shadow: 0 45px 120px rgba(2, 6, 12, 0.6);
+  box-shadow: 0 35px 100px rgba(2, 6, 12, 0.45);
   color: var(--tone-strong);
 }
 
@@ -53,7 +53,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.8fr);
   gap: 2.5rem;
-  padding: 3rem;
+  padding: 3.25rem;
   border-radius: 28px;
   background: var(--bg-hero);
   color: #fff;
@@ -76,7 +76,7 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
   position: relative;
   z-index: 1;
 }
@@ -178,7 +178,7 @@
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 
