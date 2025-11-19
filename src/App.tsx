@@ -28,11 +28,12 @@ function App() {
             Building this space to document the journey and find teams willing to mentor a motivated intern.
           </p>
           <div className="hero-skills">
-            <span className="hero-skills-label">Technical skills:</span>
+            <span className="hero-skills-label">Technical skills</span>
             <div className="hero-skills-tags">
               <span>C</span>
               <span>C++</span>
               <span>Java</span>
+              <span>SQL</span>
               <span>AWS</span>
             </div>
           </div>
