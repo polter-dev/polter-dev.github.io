@@ -116,7 +116,21 @@
         width: 100%;
         border-radius: 16px;
         border: 1px solid rgba(15, 23, 38, 0.08);
-        background: #fff;
+        background: #f7f7f7;
+        display: block;
+      }
+      .stat-fallback {
+        display: none;
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .stat-fallback a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .stat-fallback a:hover {
+        text-decoration: underline;
       }
       .stat-card .eyebrow {
         margin-bottom: 0;
@@ -212,7 +226,7 @@
             <p class="eyebrow">Marcus Ruth · Computer Science Student</p>
             <h1>GitHub Highlights</h1>
             <p>
-              Curated repositories, learning experiments, and contribution history will lives here.
+              Curated repositories, learning experiments, and contribution history live here.
             </p>
           </div>
           <div class="cta-links">
@@ -234,7 +248,13 @@
                 src="https://github-readme-stats.vercel.app/api?username=polter-dev&show_icons=true&hide_border=true&bg_color=ffffff&title_color=111a25&text_color=5d6573&icon_color=ff7a18"
                 alt="GitHub stats for polter-dev"
                 loading="lazy"
+                referrerpolicy="no-referrer"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"
               />
+              <div class="stat-fallback">
+                Stats preview is unavailable right now. View directly on
+                <a href="https://github.com/polter-dev" target="_blank" rel="noreferrer">GitHub</a>.
+              </div>
             </article>
             <article class="stat-card">
               <p class="eyebrow">Contribution streak</p>
@@ -242,6 +262,7 @@
                 src="https://ghchart.rshah.org/2f3a4d/polter-dev"
                 alt="GitHub contribution chart for polter-dev"
                 loading="lazy"
+                referrerpolicy="no-referrer"
               />
             </article>
           </div>
