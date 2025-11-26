@@ -98,8 +98,10 @@ function App() {
           <h2 id="contact-title">Learning fast, ready to contribute with guidance.</h2>
         </div>
         <div className="contact-details">
-          
           <a href="mailto:marcusruth2003@gmail.com"><em><u>Email Me!</u></em></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marcusruth2003@gmail.com" target="_blank" rel="noreferrer">
+            Open in Gmail
+          </a>
           <p>
             I’m still building foundational projects and would love to grow inside a team willing to mentor an
             intern/junior engineer.

@@ -162,6 +162,21 @@
         transform: translateY(-1px);
         box-shadow: 0 20px 40px rgba(3, 7, 13, 0.3);
       }
+      .fallback-links {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 0.5rem;
+      }
+      .fallback-links a {
+        padding: 0.35rem 0.8rem;
+        border-radius: 10px;
+        border: 1px solid rgba(17, 26, 37, 0.14);
+        background: rgba(17, 26, 37, 0.05);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
     </style>
   </head>
   <body>
@@ -194,9 +209,12 @@
           <button type="submit" aria-label="Send message">Send message</button>
         </form>
         <p class="placeholder" id="form-note">
-          Submitting opens your email client with a pre-filled message. If it doesn’t work,
-          <a href="mailto:marcusruth2003@gmail.com" id="fallback-mail" target="_blank" rel="noreferrer">click here</a>.
+          Submitting opens your email client with a pre-filled message. If it doesn’t work, use the options below.
         </p>
+        <div class="fallback-links">
+          <a href="mailto:marcusruth2003@gmail.com" target="_blank" rel="noreferrer">Open mail app</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marcusruth2003@gmail.com" target="_blank" rel="noreferrer">Open in Gmail</a>
+        </div>
       </div>
     </div>
   </body>
