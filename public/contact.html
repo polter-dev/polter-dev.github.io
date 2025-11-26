@@ -145,8 +145,8 @@
       }
       .contact-form button {
         align-self: flex-start;
-        padding: 0.75rem 1.5rem;
-        border-radius: 999px;
+        padding: 0.6rem 1.1rem;
+        border-radius: 12px;
         border: 1px solid rgba(17, 26, 37, 0.18);
         background: linear-gradient(145deg, #111a25, #0b1521);
         color: #fdfbf7;
@@ -154,13 +154,13 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         cursor: pointer;
-        box-shadow: 0 15px 30px rgba(3, 7, 13, 0.25);
+        box-shadow: 0 10px 22px rgba(3, 7, 13, 0.22);
         transition: transform 150ms ease, box-shadow 150ms ease;
       }
       .contact-form button:hover,
       .contact-form button:focus-visible {
         transform: translateY(-1px);
-        box-shadow: 0 20px 40px rgba(3, 7, 13, 0.3);
+        box-shadow: 0 16px 32px rgba(3, 7, 13, 0.26);
       }
       .fallback-links {
         display: flex;
@@ -170,8 +170,8 @@
         margin-top: 0.5rem;
       }
       .fallback-links a {
-        padding: 0.35rem 0.8rem;
-        border-radius: 10px;
+        padding: 0.28rem 0.7rem;
+        border-radius: 8px;
         border: 1px solid rgba(17, 26, 37, 0.14);
         background: rgba(17, 26, 37, 0.05);
         font-weight: 600;
@@ -209,10 +209,11 @@
           <button type="submit" aria-label="Send message">Send message</button>
         </form>
         <p class="placeholder" id="form-note">
-          Submitting opens your email client with a pre-filled message. If it doesn’t work, use the options below.
+          Submitting opens your email client with a pre-filled message. If it doesn’t work, use the options below. On
+          Windows, you may need to set a default mail app for mailto links.
         </p>
         <div class="fallback-links">
-          <a href="mailto:marcusruth2003@gmail.com" target="_blank" rel="noreferrer">Open mail app</a>
+          <a href="mailto:marcusruth2003@gmail.com">Open mail app</a>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marcusruth2003@gmail.com" target="_blank" rel="noreferrer">Open in Gmail</a>
         </div>
       </div>
