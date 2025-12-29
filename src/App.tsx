@@ -34,7 +34,6 @@ function App() {
               <span>C++</span>
               <span>Java</span>
               <span>SQL</span>
-              <span>AWS</span>
             </div>
           </div>
           <div className="hero-actions">
